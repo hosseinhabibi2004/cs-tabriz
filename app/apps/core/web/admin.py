@@ -1,9 +1,39 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
+from django.http import HttpRequest
 
-from app.apps.core.models import TGUser
+from app.apps.core.models import Course, TGUser
 
 
 @admin.register(TGUser)
-class CoreAdmin(ModelAdmin[TGUser]):
-    pass
+class TGUserAdmin(ModelAdmin[TGUser]):
+    list_display = (
+        "id",
+        "full_name",
+        "username",
+    )
+
+    def has_add_permission(self, request: HttpRequest) -> bool:
+        super().has_add_permission(request)
+        return False
+
+    def has_change_permission(
+        self, request: HttpRequest, obj: TGUser | None = None
+    ) -> bool:
+        super().has_change_permission(request, obj)
+        return False
+
+    def has_delete_permission(
+        self, request: HttpRequest, obj: TGUser | None = None
+    ) -> bool:
+        super().has_delete_permission(request, obj)
+        return False
+
+
+@admin.register(Course)
+class CourseAdmin(ModelAdmin[Course]):
+    list_display = (
+        "fa_title",
+        "course_type",
+        "unit_type",
+    )

@@ -20,9 +20,9 @@ class CoreUseCase:
         return await TGUser.objects.aupdate_or_create(
             id=user_id,
             defaults={
-                'username': username,
-                'full_name': full_name,
-            }
+                "username": username,
+                "full_name": full_name,
+            },
         )
 
 

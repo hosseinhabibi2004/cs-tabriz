@@ -14,13 +14,15 @@ class CoreUseCase:
     @staticmethod
     async def register_bot_user(
         user_id: int,
-        chat_id: int,
         username: str | None,
+        full_name: str,
     ) -> tuple[TGUser, bool]:
-        return await TGUser.objects.aget_or_create(
+        return await TGUser.objects.aupdate_or_create(
             id=user_id,
-            chat_id=chat_id,
-            username=username,
+            defaults={
+                'username': username,
+                'full_name': full_name,
+            }
         )
 
 

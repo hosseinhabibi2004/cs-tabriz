@@ -15,8 +15,8 @@ async def handle_start_command(message: Message) -> None:
 
     _, is_new = await CORE_USE_CASE.register_bot_user(
         user_id=message.from_user.id,
-        chat_id=message.chat.id,
         username=message.from_user.username,
+        full_name=message.from_user.full_name,
     )
 
     if is_new:

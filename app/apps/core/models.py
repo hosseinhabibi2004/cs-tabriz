@@ -3,7 +3,9 @@ from django.db import models
 
 class TGUser(models.Model):
     id = models.BigIntegerField(primary_key=True, verbose_name="Telegram User ID")
-    chat_id = models.BigIntegerField(verbose_name="Telegram Chat ID")
+    full_name = models.CharField(
+        max_length=64, blank=True, verbose_name="Telegram User Full Name"
+    )
     username = models.CharField(
         max_length=64, null=True, verbose_name="Telegram Username"
     )

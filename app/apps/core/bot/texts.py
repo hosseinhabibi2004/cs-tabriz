@@ -32,4 +32,7 @@ has_project: {has_project}
 """
 
 # Place
-PLACE = "PLACE"
+GROUPS = "GROUPS"
+GROUP_PLACES = """GROUP_PLACES
+
+group: {group}"""

@@ -194,17 +194,21 @@ async def places_callback_query_handler(
     await query.answer()
 
     if isinstance(callback_data, keyboards.PlaceKeyboard.Callback):
-        await query.message.edit_reply_markup(
-            reply_markup=keyboards.PlaceKeyboard(mode="group").as_markup(
-                resize_keyboard=True
-            )
+        await query.message.edit_text(
+            text=texts.GROUPS,
+            reply_markup=keyboards.PlaceKeyboard(
+                mode="group",
+            ).as_markup(resize_keyboard=True),
         )
     elif isinstance(callback_data, keyboards.PlaceKeyboard.GroupCallback):
         places = [
             place async for place in Place.objects.filter(group=callback_data.group).all()
         ]
-
-        await query.message.edit_reply_markup(
+        text = texts.GROUP_PLACES.format(
+            group=callback_data.group,
+        )
+        await query.message.edit_text(
+            text=text,
             reply_markup=keyboards.PlaceKeyboard(
                 mode="location", places=places
             ).as_markup()
@@ -221,8 +225,8 @@ async def places_callback_query_handler(
 @router.message(F.text == keyboards.MainKeyboard.place_button)
 async def places_message_handler(message: Message) -> None:
     await message.answer(
-        text=texts.PLACE,
-        reply_markup=keyboards.PlaceKeyboard(mode="group").as_markup(
-            resize_keyboard=True
-        ),
+        text=texts.GROUPS,
+        reply_markup=keyboards.PlaceKeyboard(
+            mode="group",
+        ).as_markup(resize_keyboard=True),
     )

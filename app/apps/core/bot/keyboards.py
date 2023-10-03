@@ -53,6 +53,10 @@ class FreshmanKeyboard(InlineKeyboardBuilder):
                 text=self.register_button,
                 callback_data=self.Callback(mode="register"),
             )
+            self.button(
+                text=MainKeyboard.back_button,
+                callback_data=MainKeyboard.Callback(),
+            )
         self.adjust(1)
 
 
@@ -84,6 +88,10 @@ class CourseKeyboard(InlineKeyboardBuilder):
             self.button(
                 text=self.courses_by_type_button,
                 callback_data=self.CoursesFilterCallback(filter_by="type"),
+            )
+            self.button(
+                text=MainKeyboard.back_button,
+                callback_data=MainKeyboard.Callback(),
             )
             self.adjust(1)
             return

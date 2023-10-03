@@ -1,6 +1,6 @@
 from typing import Final
 
-from app.apps.core.models import TGUser
+from .models import TGUser
 
 # The `UseCase` classes are used to separate the business logic from the rest of the code.
 # Also, because of this, we can easily use the same business logic in different places.

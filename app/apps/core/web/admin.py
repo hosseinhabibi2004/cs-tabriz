@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 from django.http import HttpRequest
 
-from app.apps.core.models import Course, TGUser
+from ..models import Course, Place, TGUser
 
 
 @admin.register(TGUser)
@@ -36,4 +36,14 @@ class CourseAdmin(ModelAdmin[Course]):
         "fa_title",
         "course_type",
         "unit_type",
+    )
+
+
+@admin.register(Place)
+class PlaceAdmin(ModelAdmin[Place]):
+    list_display = (
+        "name",
+        "group",
+        "latitude",
+        "longitude",
     )

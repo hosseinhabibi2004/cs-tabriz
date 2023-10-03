@@ -95,3 +95,37 @@ class Course(models.Model):
 
     def __str__(self) -> str:
         return f"{self.fa_title}"
+
+
+class Place(models.Model):
+    class Meta:
+        db_table = "place"
+
+    class Group(models.IntegerChoices):
+        GATE = 1, _("🚪 درب‌های ورودی")
+        RESTAURANT = 2, _("🍕 غذاخوری‌ها")
+        DORMITORY = 3, _("🛏 خوابگاه‌ها")
+        FACULTY = 4, _("📚 دانشکده‌ها")
+        BANK = 5, _("🏦 بانک‌ها")
+        OFFICE_BUILDING = 6, _("🏢 ساختمان‌های اداری")
+        OTHER = 7, _("🛟 مکان‌های رفاهی و تفریحی")
+
+    name = models.CharField(
+        max_length=64,
+        verbose_name="Name",
+    )
+    group = models.IntegerField(
+        choices=Group.choices,
+        verbose_name="Group",
+    )
+    latitude = models.FloatField(
+        verbose_name="Latitude",
+    )
+    longitude = models.FloatField(
+        verbose_name="Longitude",
+    )
+
+    objects: models.manager.BaseManager["Place"]
+
+    def __str__(self) -> str:
+        return f"{self.name}"

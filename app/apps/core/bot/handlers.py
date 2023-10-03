@@ -5,7 +5,7 @@ from aiogram.exceptions import TelegramBadRequest
 from aiogram.filters import Command
 from aiogram.types import CallbackQuery, Message
 
-from ..models import Place
+from ..models import Course, Place
 from ..use_case import CORE_USE_CASE
 from . import keyboards, texts
 
@@ -88,6 +88,93 @@ async def freshman_register_callback_query_handler(query: CallbackQuery) -> None
         )
     except TelegramBadRequest:
         pass
+
+
+@router.message(F.text == keyboards.MainKeyboard.course_button)
+async def courses_message_handler(message: Message) -> None:
+    await message.answer(
+        text=texts.COURSE_MENU,
+        reply_markup=keyboards.CourseKeyboard().as_markup(),
+    )
+
+
+@router.callback_query(keyboards.CourseKeyboard.CoursesFilterCallback.filter())
+async def courses_filter_callback_query_handler(
+    query: CallbackQuery,
+    callback_data: keyboards.CourseKeyboard.CoursesFilterCallback,
+) -> None:
+    if query.message is None:
+        return
+
+    await query.answer()
+
+    if callback_data.filter_by == "semester":
+        if callback_data.value is not None:
+            courses = [
+                course
+                async for course in Course.objects.filter(
+                    offering_semester=callback_data.value
+                ).all()
+            ]
+            text = texts.SEMESTER_COURSES_MENU.format(
+                offering_semester=callback_data.value
+            )
+        else:
+            courses = None
+            text = texts.COURSES_BY_SEMESTER_MENU
+    elif callback_data.filter_by == "type":
+        if callback_data.value is not None:
+            courses = [
+                course
+                async for course in Course.objects.filter(
+                    course_type=callback_data.value
+                ).all()
+            ]
+            text = texts.TYPE_COURSES_MENU.format(course_type=callback_data.value)
+        else:
+            courses = None
+            text = texts.COURSES_BY_SEMESTER_MENU
+    else:
+        courses = None
+        text = texts.COURSE_MENU
+
+    await query.message.edit_text(
+        text=text,
+        reply_markup=keyboards.CourseKeyboard(
+            filter_by=callback_data.filter_by, courses=courses
+        ).as_markup(),
+    )
+
+
+@router.callback_query(keyboards.CourseKeyboard.CourseCallback.filter())
+async def course_details_callback_query_handler(
+    query: CallbackQuery,
+    callback_data: keyboards.CourseKeyboard.CourseCallback,
+) -> None:
+    if query.message is None:
+        return
+
+    await query.answer()
+
+    course = await Course.objects.aget(id=callback_data.id)
+    text = texts.COURSE_DETAILS.format(
+        fa_title=course.fa_title,
+        en_title=course.en_title,
+        offering_semester=course.offering_semester,
+        credit=course.credit,
+        quiz_credit=course.quiz_credit,
+        prerequisite_course=course.prerequisite_course,
+        unit_type=course.unit_type,
+        course_type=course.course_type,
+        has_exam=course.has_exam,
+        has_project=course.has_project,
+    )
+    await query.message.edit_text(
+        text=text,
+        reply_markup=keyboards.CourseKeyboard(
+            filter_by=callback_data.filter_by, course=course
+        ).as_markup(),
+    )
 
 
 @router.callback_query(keyboards.PlaceKeyboard.Callback.filter())

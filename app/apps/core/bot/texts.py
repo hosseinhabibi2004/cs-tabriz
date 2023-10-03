@@ -41,3 +41,11 @@ GROUPS = "GROUPS"
 GROUP_PLACES = """GROUP_PLACES
 
 group: {group}"""
+
+# Phone
+PHONES = """PHONES
+
+{phones}"""
+PHONE_TEMPLATE = """PHONE_TEMPLATE
+name: {name}
+phone_number: {phone_number}"""

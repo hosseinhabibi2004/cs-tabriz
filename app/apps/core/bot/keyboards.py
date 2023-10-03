@@ -20,8 +20,9 @@ def right_to_left_markup(old_list: list[Any]) -> list[Any]:
 
 class MainKeyboard(ReplyKeyboardBuilder):
     freshman_button = "Freshman"
-    place_button = "Place"
     course_button = "Course"
+    place_button = "Place"
+    phone_button = "Phone"
     back_button = "Back"
 
     class Callback(CallbackData, prefix="main_menu"):
@@ -32,6 +33,7 @@ class MainKeyboard(ReplyKeyboardBuilder):
         self.button(text=self.freshman_button)
         self.button(text=self.course_button)
         self.button(text=self.place_button)
+        self.button(text=self.phone_button)
         self.adjust(1)
 
 

@@ -5,7 +5,7 @@ from aiogram.exceptions import TelegramBadRequest
 from aiogram.filters import Command
 from aiogram.types import CallbackQuery, Message
 
-from ..models import Course, Place
+from ..models import Course, Phone, Place
 from ..use_case import CORE_USE_CASE
 from . import keyboards, texts
 
@@ -232,3 +232,19 @@ async def places_callback_query_handler(
         )
         await query.message.delete()
         await query.message.send_copy(chat_id=query.from_user.id)
+
+
+@router.message(F.text == keyboards.MainKeyboard.phone_button)
+async def phones_message_handler(message: Message) -> None:
+    text = texts.PHONES.format(
+        phones="\n\n".join(
+            [
+                texts.PHONE_TEMPLATE.format(
+                    name=phone.name,
+                    phone_number=phone.phone_number,
+                )
+                async for phone in Phone.objects.filter().all()
+            ]
+        )
+    )
+    await message.answer(text=text)

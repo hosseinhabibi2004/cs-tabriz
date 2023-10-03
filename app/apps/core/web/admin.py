@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 from django.http import HttpRequest
 
-from ..models import Course, Place, TGUser
+from ..models import Course, Phone, Place, TGUser
 
 
 @admin.register(TGUser)
@@ -48,4 +48,12 @@ class PlaceAdmin(ModelAdmin[Place]):
         "group",
         "latitude",
         "longitude",
+    )
+
+
+@admin.register(Phone)
+class PhoneAdmin(ModelAdmin[Phone]):
+    list_display = (
+        "name",
+        "phone_number",
     )

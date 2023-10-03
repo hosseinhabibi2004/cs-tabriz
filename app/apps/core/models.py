@@ -1,4 +1,7 @@
-from django.core.validators import MaxValueValidator, MinValueValidator
+import re
+from typing import Iterable
+
+from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -129,3 +132,43 @@ class Place(models.Model):
 
     def __str__(self) -> str:
         return f"{self.name}"
+
+
+class Phone(models.Model):
+    class Meta:
+        db_table = "phone"
+
+    name = models.CharField(
+        max_length=64,
+        verbose_name="Name",
+    )
+    phone_number = models.CharField(
+        max_length=13,
+        validators=[
+            RegexValidator(r"^((0|00|\+)?98|0)?(\d{10})$"),
+        ],
+        verbose_name="Phone Number",
+    )
+
+    objects: models.manager.BaseManager["Phone"]
+
+    def __str__(self) -> str:
+        return f"{self.name}"
+
+    def save(
+        self,
+        force_insert: bool = False,
+        force_update: bool = False,
+        using: str | None = None,
+        update_fields: Iterable[str] | None = None,
+    ) -> None:
+        phone_number_match = re.match(r"^((0|00|\+)?98|0)?(\d{10})$", self.phone_number)
+        if phone_number_match:
+            self.phone_number = "+98" + phone_number_match.group(3)
+
+        super().save(
+            force_insert=force_insert,
+            force_update=force_update,
+            using=using,
+            update_fields=update_fields,
+        )

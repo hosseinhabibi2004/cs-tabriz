@@ -202,8 +202,8 @@ class PlaceKeyboard(InlineKeyboardBuilder):
 
     def __init__(
         self,
-        mode: str | None = None,
-        places: list[Place] | None = None,
+        mode: Optional[str] = None,
+        places: Optional[list[Place]] = None,
     ) -> None:
         super().__init__()
 

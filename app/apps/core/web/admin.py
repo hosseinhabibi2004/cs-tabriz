@@ -1,3 +1,5 @@
+from typing import Optional
+
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 from django.http import HttpRequest
@@ -18,13 +20,13 @@ class TGUserAdmin(ModelAdmin[TGUser]):
         return False
 
     def has_change_permission(
-        self, request: HttpRequest, obj: TGUser | None = None
+        self, request: HttpRequest, obj: Optional[TGUser] = None
     ) -> bool:
         super().has_change_permission(request, obj)
         return False
 
     def has_delete_permission(
-        self, request: HttpRequest, obj: TGUser | None = None
+        self, request: HttpRequest, obj: Optional[TGUser] = None
     ) -> bool:
         super().has_delete_permission(request, obj)
         return False

@@ -1,4 +1,4 @@
-from typing import Final
+from typing import Final, Optional
 
 from .models import TGUser
 
@@ -14,7 +14,7 @@ class CoreUseCase:
     @staticmethod
     async def register_bot_user(
         user_id: int,
-        username: str | None,
+        username: Optional[str],
         full_name: str,
     ) -> tuple[TGUser, bool]:
         return await TGUser.objects.aupdate_or_create(

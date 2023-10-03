@@ -179,6 +179,16 @@ async def course_details_callback_query_handler(
     )
 
 
+@router.message(F.text == keyboards.MainKeyboard.place_button)
+async def places_message_handler(message: Message) -> None:
+    await message.answer(
+        text=texts.GROUPS,
+        reply_markup=keyboards.PlaceKeyboard(
+            mode="group",
+        ).as_markup(resize_keyboard=True),
+    )
+
+
 @router.callback_query(keyboards.PlaceKeyboard.Callback.filter())
 @router.callback_query(keyboards.PlaceKeyboard.GroupCallback.filter())
 @router.callback_query(keyboards.PlaceKeyboard.LocationCallback.filter())
@@ -222,13 +232,3 @@ async def places_callback_query_handler(
         )
         await query.message.delete()
         await query.message.send_copy(chat_id=query.from_user.id)
-
-
-@router.message(F.text == keyboards.MainKeyboard.place_button)
-async def places_message_handler(message: Message) -> None:
-    await message.answer(
-        text=texts.GROUPS,
-        reply_markup=keyboards.PlaceKeyboard(
-            mode="group",
-        ).as_markup(resize_keyboard=True),
-    )

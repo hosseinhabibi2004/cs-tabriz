@@ -1,6 +1,7 @@
 from typing import Union
 
 from aiogram import F, Router
+from aiogram.exceptions import TelegramBadRequest
 from aiogram.filters import Command
 from aiogram.types import CallbackQuery, Message
 
@@ -51,6 +52,42 @@ async def back_main_menu_callback_query_handler(query: CallbackQuery) -> None:
         text=texts.BACK_MAIN_MENU,
         reply_markup=keyboards.MainKeyboard().as_markup(resize_keyboard=True),
     )
+
+
+@router.message(F.text == keyboards.MainKeyboard.freshman_button)
+@router.callback_query(keyboards.FreshmanKeyboard.Callback.filter(F.mode == "menu"))
+async def freshman_message_handler(query_message: Union[CallbackQuery, Message]) -> None:
+    if isinstance(query_message, Message):
+        await query_message.answer(
+            text=texts.FRESHMAN_MENU,
+            reply_markup=keyboards.FreshmanKeyboard().as_markup(),
+        )
+    else:
+        if not query_message.message:
+            return
+
+        await query_message.answer()
+
+        await query_message.message.edit_text(
+            text=texts.FRESHMAN_MENU,
+            reply_markup=keyboards.FreshmanKeyboard().as_markup(),
+        )
+
+
+@router.callback_query(keyboards.FreshmanKeyboard.Callback.filter(F.mode == "register"))
+async def freshman_register_callback_query_handler(query: CallbackQuery) -> None:
+    if query.message is None:
+        return
+
+    await query.answer()
+
+    try:
+        await query.message.edit_text(
+            text=texts.FRESHMAN_REGISTER,
+            reply_markup=keyboards.FreshmanKeyboard(back=True).as_markup(),
+        )
+    except TelegramBadRequest:
+        pass
 
 
 @router.callback_query(keyboards.PlaceKeyboard.Callback.filter())

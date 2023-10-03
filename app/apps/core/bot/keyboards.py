@@ -5,6 +5,7 @@ from ..models import Place
 
 
 class MainKeyboard(ReplyKeyboardBuilder):
+    freshman_button = "Freshman"
     place_button = "Place"
     back_button = "Back"
 
@@ -13,7 +14,29 @@ class MainKeyboard(ReplyKeyboardBuilder):
 
     def __init__(self) -> None:
         super().__init__()
+        self.button(text=self.freshman_button)
         self.button(text=self.place_button)
+        self.adjust(1)
+
+
+class FreshmanKeyboard(InlineKeyboardBuilder):
+    register_button = "Freshman Register"
+
+    class Callback(CallbackData, prefix="freshman"):
+        mode: str
+
+    def __init__(self, back: bool = False) -> None:
+        super().__init__()
+        if back:
+            self.button(
+                text=MainKeyboard.back_button,
+                callback_data=self.Callback(mode="menu"),
+            )
+        else:
+            self.button(
+                text=self.register_button,
+                callback_data=self.Callback(mode="register"),
+            )
         self.adjust(1)
 
 

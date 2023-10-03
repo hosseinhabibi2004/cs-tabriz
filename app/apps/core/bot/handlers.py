@@ -130,7 +130,9 @@ async def courses_filter_callback_query_handler(
                     course_type=callback_data.value
                 ).all()
             ]
-            text = texts.TYPE_COURSES_MENU.format(course_type=callback_data.value)
+            text = texts.TYPE_COURSES_MENU.format(
+                course_type=Course.CourseType(callback_data.value).label,
+            )
         else:
             courses = None
             text = texts.COURSES_BY_SEMESTER_MENU
@@ -164,8 +166,8 @@ async def course_details_callback_query_handler(
         credit=course.credit,
         quiz_credit=course.quiz_credit,
         prerequisite_course=course.prerequisite_course,
-        unit_type=course.unit_type,
-        course_type=course.course_type,
+        unit_type=Course.UnitType(course.unit_type).label,
+        course_type=Course.CourseType(course.course_type).label,
         has_exam=course.has_exam,
         has_project=course.has_project,
     )
@@ -205,7 +207,7 @@ async def places_callback_query_handler(
             place async for place in Place.objects.filter(group=callback_data.group).all()
         ]
         text = texts.GROUP_PLACES.format(
-            group=callback_data.group,
+            group=Place.Group(callback_data.group).label,
         )
         await query.message.edit_text(
             text=text,

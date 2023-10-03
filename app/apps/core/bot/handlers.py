@@ -35,11 +35,11 @@ async def start_message_handler(message: Message) -> None:
         )
     await message.answer(
         text=text,
-        reply_markup=keyboards.MainMenu().as_markup(resize_keyboard=True),
+        reply_markup=keyboards.MainKeyboard().as_markup(resize_keyboard=True),
     )
 
 
-@router.callback_query(keyboards.MainMenu.Callback.filter())
+@router.callback_query(keyboards.MainKeyboard.Callback.filter())
 async def back_main_menu_callback_query_handler(query: CallbackQuery) -> None:
     if query.message is None:
         return
@@ -49,19 +49,19 @@ async def back_main_menu_callback_query_handler(query: CallbackQuery) -> None:
     await query.message.delete()
     await query.message.answer(
         text=texts.BACK_MAIN_MENU,
-        reply_markup=keyboards.MainMenu().as_markup(resize_keyboard=True),
+        reply_markup=keyboards.MainKeyboard().as_markup(resize_keyboard=True),
     )
 
 
-@router.callback_query(keyboards.Places.Callback.filter())
-@router.callback_query(keyboards.Places.GroupCallback.filter())
-@router.callback_query(keyboards.Places.LocationCallback.filter())
-async def place_callback_query_handler(
+@router.callback_query(keyboards.PlaceKeyboard.Callback.filter())
+@router.callback_query(keyboards.PlaceKeyboard.GroupCallback.filter())
+@router.callback_query(keyboards.PlaceKeyboard.LocationCallback.filter())
+async def places_callback_query_handler(
     query: CallbackQuery,
     callback_data: Union[
-        keyboards.Places.Callback,
-        keyboards.Places.GroupCallback,
-        keyboards.Places.LocationCallback,
+        keyboards.PlaceKeyboard.Callback,
+        keyboards.PlaceKeyboard.GroupCallback,
+        keyboards.PlaceKeyboard.LocationCallback,
     ],
 ) -> None:
     if query.message is None:
@@ -69,19 +69,23 @@ async def place_callback_query_handler(
 
     await query.answer()
 
-    if isinstance(callback_data, keyboards.Places.Callback):
+    if isinstance(callback_data, keyboards.PlaceKeyboard.Callback):
         await query.message.edit_reply_markup(
-            reply_markup=keyboards.Places(mode="group").as_markup(resize_keyboard=True)
+            reply_markup=keyboards.PlaceKeyboard(mode="group").as_markup(
+                resize_keyboard=True
+            )
         )
-    elif isinstance(callback_data, keyboards.Places.GroupCallback):
+    elif isinstance(callback_data, keyboards.PlaceKeyboard.GroupCallback):
         places = [
             place async for place in Place.objects.filter(group=callback_data.group).all()
         ]
 
         await query.message.edit_reply_markup(
-            reply_markup=keyboards.Places(mode="location", places=places).as_markup()
+            reply_markup=keyboards.PlaceKeyboard(
+                mode="location", places=places
+            ).as_markup()
         )
-    elif isinstance(callback_data, keyboards.Places.LocationCallback):
+    elif isinstance(callback_data, keyboards.PlaceKeyboard.LocationCallback):
         await query.message.answer_location(
             latitude=callback_data.latitude,
             longitude=callback_data.longitude,
@@ -90,9 +94,11 @@ async def place_callback_query_handler(
         await query.message.send_copy(chat_id=query.from_user.id)
 
 
-@router.message(F.text == keyboards.MainMenu.places)
-async def place_message_handler(message: Message) -> None:
+@router.message(F.text == keyboards.MainKeyboard.place_button)
+async def places_message_handler(message: Message) -> None:
     await message.answer(
-        text=texts.PLACES,
-        reply_markup=keyboards.Places(mode="group").as_markup(resize_keyboard=True),
+        text=texts.PLACE,
+        reply_markup=keyboards.PlaceKeyboard(mode="group").as_markup(
+            resize_keyboard=True
+        ),
     )

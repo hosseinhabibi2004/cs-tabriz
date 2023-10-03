@@ -1,7 +1,8 @@
-BACK_MAIN_MENU = "به منوی اصلی بازگشتید."
+# Main
+START_NEW_USER = "START_NEW_USER\n{bot_name}\n{full_name}"
+START_EXISTED_USER = "START_EXISTED_USER\n{bot_name}\n{full_name}"
+BACK_MAIN_MENU = "BACK_MAIN_MENU"
 
-START_NEW_USER = "👋 سلام <i>{full_name}</i> به ربات {bot_name} خوش اومدی."
 
-START_EXISTED_USER = "👋 سلام <i>{full_name}</i> به ربات {bot_name} خوش برگشتی."
-
-PLACES = "کجا می‌خوای بری؟"
+# Place
+PLACE = "PLACE"

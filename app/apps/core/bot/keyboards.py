@@ -207,11 +207,11 @@ class PlaceKeyboard(InlineKeyboardBuilder):
     ) -> None:
         super().__init__()
 
-        i = 0
+        markup_length = 0
         if mode == "group":
             groups = Place.Group.choices
-            i = len(groups)
-            for group_id, group_name in groups:
+            markup_length = len(groups)
+            for group_id, group_name in right_to_left_markup(groups):
                 self.button(
                     text=str(group_name),
                     callback_data=self.GroupCallback(group=group_id),
@@ -219,9 +219,9 @@ class PlaceKeyboard(InlineKeyboardBuilder):
             self.button(
                 text=MainKeyboard.back_button, callback_data=MainKeyboard.Callback()
             )
-        elif mode == "location" and places:
-            i = len(places)
-            for place in places:
+        elif mode == "location" and places is not None:
+            markup_length = len(places)
+            for place in right_to_left_markup(places):
                 self.button(
                     text=place.name,
                     callback_data=self.LocationCallback(
@@ -230,7 +230,7 @@ class PlaceKeyboard(InlineKeyboardBuilder):
                 )
             self.button(text=MainKeyboard.back_button, callback_data=self.Callback())
 
-        if i % 2:
-            self.adjust(*[2 for _ in range(i // 2)] + [1, 1])
+        if markup_length % 2:
+            self.adjust(*[2 for _ in range(markup_length // 2)] + [1, 1])
         else:
             self.adjust(2)

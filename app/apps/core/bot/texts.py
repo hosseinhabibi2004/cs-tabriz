@@ -1,9 +1,15 @@
 # Main
-START_NEW_USER = "START_NEW_USER\n{bot_name}\n{full_name}"
-START_EXISTED_USER = "START_EXISTED_USER\n{bot_name}\n{full_name}"
+START_NEW_USER = """START_NEW_USER
+
+bot_name: {bot_name}
+full_name: {full_name}"""
+START_EXISTED_USER = """START_EXISTED_USER
+
+bot_name: {bot_name}
+full_name: {full_name}"""
 BACK_MAIN_MENU = "BACK_MAIN_MENU"
 
-# New Students
+# Freshman
 FRESHMAN_MENU = "FRESHMAN_MENU"
 FRESHMAN_REGISTER = "FRESHMAN_REGISTER"
 
@@ -28,8 +34,7 @@ prerequisite_course: {prerequisite_course}
 unit_type: {unit_type}
 course_type: {course_type}
 has_exam: {has_exam}
-has_project: {has_project}
-"""
+has_project: {has_project}"""
 
 # Place
 GROUPS = "GROUPS"

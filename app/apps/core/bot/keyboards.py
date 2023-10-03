@@ -225,7 +225,8 @@ class PlaceKeyboard(InlineKeyboardBuilder):
                     callback_data=self.GroupCallback(group=group_id),
                 )
             self.button(
-                text=MainKeyboard.back_button, callback_data=MainKeyboard.Callback()
+                text=MainKeyboard.back_button,
+                callback_data=MainKeyboard.Callback(),
             )
         elif mode == "location" and places is not None:
             markup_length = len(places)
@@ -236,7 +237,10 @@ class PlaceKeyboard(InlineKeyboardBuilder):
                         latitude=place.latitude, longitude=place.longitude
                     ),
                 )
-            self.button(text=MainKeyboard.back_button, callback_data=self.Callback())
+            self.button(
+                text=MainKeyboard.back_button,
+                callback_data=self.Callback(),
+            )
 
         if markup_length % 2:
             self.adjust(*[2 for _ in range(markup_length // 2)] + [1, 1])

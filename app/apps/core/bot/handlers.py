@@ -117,7 +117,7 @@ async def courses_filter_callback_query_handler(
                 ).all()
             ]
             text = texts.SEMESTER_COURSES_MENU.format(
-                offering_semester=callback_data.value
+                offering_semester=callback_data.value,
             )
         else:
             courses = None
@@ -213,7 +213,7 @@ async def places_callback_query_handler(
             text=text,
             reply_markup=keyboards.PlaceKeyboard(
                 mode="location", places=places
-            ).as_markup()
+            ).as_markup(),
         )
     elif isinstance(callback_data, keyboards.PlaceKeyboard.LocationCallback):
         await query.message.answer_location(

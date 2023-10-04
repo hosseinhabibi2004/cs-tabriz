@@ -3,8 +3,9 @@ from typing import Optional
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 from django.http import HttpRequest
+from django.utils.html import format_html
 
-from ..models import Course, Phone, Place, TGUser
+from ..models import Course, Link, Phone, Place, TGUser
 
 
 @admin.register(TGUser)
@@ -57,3 +58,15 @@ class PhoneAdmin(ModelAdmin[Phone]):
         "name",
         "phone_number",
     )
+
+
+@admin.register(Link)
+class LinkAdmin(ModelAdmin[Link]):
+    list_display = (
+        "name",
+        "url_address",
+    )
+
+    @admin.display()
+    def url_address(self, obj: Link) -> str:
+        return format_html(f'<a href="{obj.address}">{obj.address}</a>')

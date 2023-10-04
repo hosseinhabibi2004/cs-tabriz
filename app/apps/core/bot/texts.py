@@ -49,3 +49,10 @@ PHONES = """PHONES
 PHONE_TEMPLATE = """PHONE_TEMPLATE
 name: {name}
 phone_number: {phone_number}"""
+
+# Link
+LINKS = """LINKS
+
+{links}"""
+LINK_TEMPLATE = """LINK_TEMPLATE
+<a href="{address}">{name}</a>"""

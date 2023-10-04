@@ -5,7 +5,7 @@ from aiogram.exceptions import TelegramBadRequest
 from aiogram.filters import Command
 from aiogram.types import CallbackQuery, Message
 
-from ..models import Course, Phone, Place
+from ..models import Course, Link, Phone, Place
 from ..use_case import CORE_USE_CASE
 from . import keyboards, texts
 
@@ -244,6 +244,22 @@ async def phones_message_handler(message: Message) -> None:
                     phone_number=phone.phone_number,
                 )
                 async for phone in Phone.objects.filter().all()
+            ]
+        )
+    )
+    await message.answer(text=text)
+
+
+@router.message(F.text == keyboards.MainKeyboard.link_button)
+async def links_message_handler(message: Message) -> None:
+    text = texts.LINKS.format(
+        links="\n\n".join(
+            [
+                texts.LINK_TEMPLATE.format(
+                    name=link.name,
+                    address=link.address,
+                )
+                async for link in Link.objects.filter().all()
             ]
         )
     )

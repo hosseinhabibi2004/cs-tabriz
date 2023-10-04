@@ -23,6 +23,7 @@ class MainKeyboard(ReplyKeyboardBuilder):
     course_button = "Course"
     place_button = "Place"
     phone_button = "Phone"
+    link_button = "Link"
     back_button = "Back"
 
     class Callback(CallbackData, prefix="main_menu"):
@@ -34,6 +35,7 @@ class MainKeyboard(ReplyKeyboardBuilder):
         self.button(text=self.course_button)
         self.button(text=self.place_button)
         self.button(text=self.phone_button)
+        self.button(text=self.link_button)
         self.adjust(1)
 
 

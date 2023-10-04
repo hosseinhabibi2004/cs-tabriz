@@ -172,3 +172,21 @@ class Phone(models.Model):
             using=using,
             update_fields=update_fields,
         )
+
+
+class Link(models.Model):
+    class Meta:
+        db_table = "link"
+
+    name = models.CharField(
+        max_length=64,
+        verbose_name="Name",
+    )
+    address = models.URLField(
+        verbose_name="URL Address",
+    )
+
+    objects: models.manager.BaseManager["Link"]
+
+    def __str__(self) -> str:
+        return f"{self.name}"

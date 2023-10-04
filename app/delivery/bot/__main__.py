@@ -1,12 +1,17 @@
 import logging
 
 from aiogram import Bot, Dispatcher
+from aiogram.enums import ParseMode
 from aiogram.types import BotCommand
 
 from app.apps.core.bot.handlers import router as core_router
 from app.config.bot import RUNNING_MODE, TG_TOKEN, RunningMode
 
-bot = Bot(TG_TOKEN, parse_mode="HTML")
+bot = Bot(
+    TG_TOKEN,
+    parse_mode=ParseMode.HTML,
+    disable_web_page_preview=True,
+)
 
 dispatcher = Dispatcher()
 logging.basicConfig(level=logging.INFO)

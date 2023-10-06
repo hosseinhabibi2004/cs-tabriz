@@ -5,7 +5,37 @@ from django.contrib.admin import ModelAdmin
 from django.http import HttpRequest
 from django.utils.html import format_html
 
-from ..models import Course, Link, Phone, Place, TGUser
+from ..models import Course, Link, Phone, Place, Text, TGUser
+
+
+@admin.register(Text)
+class TextAdmin(ModelAdmin[Text]):
+    list_display = (
+        "name",
+        "is_button",
+        "text",
+    )
+
+    readonly_fields = (
+        "name",
+        "is_button",
+    )
+
+    fields = (
+        "name",
+        "is_button",
+        "text",
+    )
+
+    def has_add_permission(self, request: HttpRequest) -> bool:
+        super().has_add_permission(request)
+        return False
+
+    def has_delete_permission(
+        self, request: HttpRequest, obj: Optional[Text] = None
+    ) -> bool:
+        super().has_delete_permission(request, obj)
+        return False
 
 
 @admin.register(TGUser)

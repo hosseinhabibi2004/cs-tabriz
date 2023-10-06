@@ -6,8 +6,8 @@ from aiogram.filters import Command
 from aiogram.types import CallbackQuery, Message
 
 from ..models import Course, Link, Phone, Place
-from ..use_case import CORE_USE_CASE
-from . import keyboards, texts
+from ..use_case import CORE_USE_CASE, TEXT_USE_CASE
+from . import keyboards
 
 router = Router()
 
@@ -25,12 +25,14 @@ async def start_message_handler(message: Message) -> None:
 
     bot_name = (await message.bot.get_my_name()).name if message.bot else ""
     if is_new:
-        text = texts.START_NEW_USER.format(
+        text = await TEXT_USE_CASE.aget_text(
+            "START_NEW_USER",
             full_name=message.from_user.full_name,
             bot_name=bot_name,
         )
     else:
-        text = texts.START_EXISTED_USER.format(
+        text = await TEXT_USE_CASE.aget_text(
+            "START_EXISTED_USER",
             full_name=message.from_user.full_name,
             bot_name=bot_name,
         )
@@ -49,7 +51,7 @@ async def back_main_menu_callback_query_handler(query: CallbackQuery) -> None:
 
     await query.message.delete()
     await query.message.answer(
-        text=texts.BACK_MAIN_MENU,
+        text=await TEXT_USE_CASE.aget_text("BACK_MAIN_MENU"),
         reply_markup=keyboards.MainKeyboard().as_markup(resize_keyboard=True),
     )
 
@@ -59,7 +61,7 @@ async def back_main_menu_callback_query_handler(query: CallbackQuery) -> None:
 async def freshman_message_handler(query_message: Union[CallbackQuery, Message]) -> None:
     if isinstance(query_message, Message):
         await query_message.answer(
-            text=texts.FRESHMAN_MENU,
+            text=await TEXT_USE_CASE.aget_text("FRESHMAN_MENU"),
             reply_markup=keyboards.FreshmanKeyboard().as_markup(),
         )
     else:
@@ -69,7 +71,7 @@ async def freshman_message_handler(query_message: Union[CallbackQuery, Message])
         await query_message.answer()
 
         await query_message.message.edit_text(
-            text=texts.FRESHMAN_MENU,
+            text=await TEXT_USE_CASE.aget_text("FRESHMAN_MENU"),
             reply_markup=keyboards.FreshmanKeyboard().as_markup(),
         )
 
@@ -83,7 +85,7 @@ async def freshman_register_callback_query_handler(query: CallbackQuery) -> None
 
     try:
         await query.message.edit_text(
-            text=texts.FRESHMAN_REGISTER,
+            text=await TEXT_USE_CASE.aget_text("FRESHMAN_REGISTER"),
             reply_markup=keyboards.FreshmanKeyboard(back=True).as_markup(),
         )
     except TelegramBadRequest:
@@ -93,7 +95,7 @@ async def freshman_register_callback_query_handler(query: CallbackQuery) -> None
 @router.message(F.text == keyboards.MainKeyboard.course_button)
 async def courses_message_handler(message: Message) -> None:
     await message.answer(
-        text=texts.COURSE_MENU,
+        text=await TEXT_USE_CASE.aget_text("COURSE_MENU"),
         reply_markup=keyboards.CourseKeyboard().as_markup(),
     )
 
@@ -116,12 +118,13 @@ async def courses_filter_callback_query_handler(
                     offering_semester=callback_data.value
                 ).all()
             ]
-            text = texts.SEMESTER_COURSES_MENU.format(
+            text = await TEXT_USE_CASE.aget_text(
+                "SEMESTER_COURSES_MENU",
                 offering_semester=callback_data.value,
             )
         else:
             courses = None
-            text = texts.COURSES_BY_SEMESTER_MENU
+            text = await TEXT_USE_CASE.aget_text("COURSES_BY_SEMESTER_MENU")
     elif callback_data.filter_by == "type":
         if callback_data.value is not None:
             courses = [
@@ -130,15 +133,16 @@ async def courses_filter_callback_query_handler(
                     course_type=callback_data.value
                 ).all()
             ]
-            text = texts.TYPE_COURSES_MENU.format(
+            text = await TEXT_USE_CASE.aget_text(
+                "TYPE_COURSES_MENU",
                 course_type=Course.CourseType(callback_data.value).label,
             )
         else:
             courses = None
-            text = texts.COURSES_BY_SEMESTER_MENU
+            text = await TEXT_USE_CASE.aget_text("COURSES_BY_SEMESTER_MENU")
     else:
         courses = None
-        text = texts.COURSE_MENU
+        text = await TEXT_USE_CASE.aget_text("COURSE_MENU")
 
     await query.message.edit_text(
         text=text,
@@ -159,7 +163,8 @@ async def course_details_callback_query_handler(
     await query.answer()
 
     course = await Course.objects.aget(id=callback_data.id)
-    text = texts.COURSE_DETAILS.format(
+    text = await TEXT_USE_CASE.aget_text(
+        "COURSE_DETAILS",
         fa_title=course.fa_title,
         en_title=course.en_title,
         offering_semester=course.offering_semester,
@@ -182,7 +187,7 @@ async def course_details_callback_query_handler(
 @router.message(F.text == keyboards.MainKeyboard.place_button)
 async def places_message_handler(message: Message) -> None:
     await message.answer(
-        text=texts.GROUPS,
+        text=await TEXT_USE_CASE.aget_text("GROUPS"),
         reply_markup=keyboards.PlaceKeyboard(
             mode="group",
         ).as_markup(resize_keyboard=True),
@@ -207,7 +212,7 @@ async def places_callback_query_handler(
 
     if isinstance(callback_data, keyboards.PlaceKeyboard.Callback):
         await query.message.edit_text(
-            text=texts.GROUPS,
+            text=await TEXT_USE_CASE.aget_text("GROUPS"),
             reply_markup=keyboards.PlaceKeyboard(
                 mode="group",
             ).as_markup(resize_keyboard=True),
@@ -216,7 +221,8 @@ async def places_callback_query_handler(
         places = [
             place async for place in Place.objects.filter(group=callback_data.group).all()
         ]
-        text = texts.GROUP_PLACES.format(
+        text = await TEXT_USE_CASE.aget_text(
+            "GROUP_PLACES",
             group=Place.Group(callback_data.group).label,
         )
         await query.message.edit_text(
@@ -236,31 +242,35 @@ async def places_callback_query_handler(
 
 @router.message(F.text == keyboards.MainKeyboard.phone_button)
 async def phones_message_handler(message: Message) -> None:
-    text = texts.PHONES.format(
+    text = await TEXT_USE_CASE.aget_text(
+        "PHONES",
         phones="\n\n".join(
             [
-                texts.PHONE_TEMPLATE.format(
+                await TEXT_USE_CASE.aget_text(
+                    "PHONE_TEMPLATE",
                     name=phone.name,
                     phone_number=phone.phone_number,
                 )
                 async for phone in Phone.objects.filter().all()
             ]
-        )
+        ),
     )
     await message.answer(text=text)
 
 
 @router.message(F.text == keyboards.MainKeyboard.link_button)
 async def links_message_handler(message: Message) -> None:
-    text = texts.LINKS.format(
+    text = await TEXT_USE_CASE.aget_text(
+        "LINKS",
         links="\n\n".join(
             [
-                texts.LINK_TEMPLATE.format(
+                await TEXT_USE_CASE.aget_text(
+                    "LINK_TEMPLATE",
                     name=link.name,
                     address=link.address,
                 )
                 async for link in Link.objects.filter().all()
             ]
-        )
+        ),
     )
     await message.answer(text=text)

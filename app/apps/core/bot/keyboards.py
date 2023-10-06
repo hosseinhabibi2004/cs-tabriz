@@ -4,6 +4,7 @@ from aiogram.filters.callback_data import CallbackData
 from aiogram.utils.keyboard import InlineKeyboardBuilder, ReplyKeyboardBuilder
 
 from ..models import Course, Place
+from ..use_case import TEXT_USE_CASE
 
 
 def right_to_left_markup(old_list: list[Any]) -> list[Any]:
@@ -19,12 +20,30 @@ def right_to_left_markup(old_list: list[Any]) -> list[Any]:
 
 
 class MainKeyboard(ReplyKeyboardBuilder):
-    freshman_button = "Freshman"
-    course_button = "Course"
-    place_button = "Place"
-    phone_button = "Phone"
-    link_button = "Link"
-    back_button = "Back"
+    freshman_button = TEXT_USE_CASE.get_text(
+        "MAIN_FRESHMAN",
+        is_button=True,
+    )
+    course_button = TEXT_USE_CASE.get_text(
+        "MAIN_COURSE",
+        is_button=True,
+    )
+    place_button = TEXT_USE_CASE.get_text(
+        "MAIN_PLACE",
+        is_button=True,
+    )
+    phone_button = TEXT_USE_CASE.get_text(
+        "MAIN_PHONE",
+        is_button=True,
+    )
+    link_button = TEXT_USE_CASE.get_text(
+        "MAIN_LINK",
+        is_button=True,
+    )
+    back_button = TEXT_USE_CASE.get_text(
+        "MAIN_BACK",
+        is_button=True,
+    )
 
     class Callback(CallbackData, prefix="main_menu"):
         pass
@@ -40,7 +59,10 @@ class MainKeyboard(ReplyKeyboardBuilder):
 
 
 class FreshmanKeyboard(InlineKeyboardBuilder):
-    register_button = "Freshman Register"
+    register_button = TEXT_USE_CASE.get_text(
+        "FRESHMAN_REGISTER",
+        is_button=True,
+    )
 
     class Callback(CallbackData, prefix="freshman"):
         mode: str
@@ -65,8 +87,14 @@ class FreshmanKeyboard(InlineKeyboardBuilder):
 
 
 class CourseKeyboard(InlineKeyboardBuilder):
-    courses_by_semester_button = "Courses by semester"
-    courses_by_type_button = "Courses by type"
+    courses_by_semester_button = TEXT_USE_CASE.get_text(
+        "COURSE_COURSES_BY_SEMESTER",
+        is_button=True,
+    )
+    courses_by_type_button = TEXT_USE_CASE.get_text(
+        "COURSE_COURSES_BY_TYPE",
+        is_button=True,
+    )
 
     class CoursesFilterCallback(CallbackData, prefix="courses"):
         filter_by: Optional[str] = None

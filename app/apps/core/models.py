@@ -6,6 +6,45 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
+class Text(models.Model):
+    class Meta:
+        db_table = "text"
+
+    name = models.CharField(
+        max_length=64,
+        verbose_name="Variable Name",
+    )
+
+    is_button = models.BooleanField(
+        verbose_name="Is Button",
+    )
+    text = models.TextField(
+        verbose_name="Text",
+    )
+
+    objects: models.manager.BaseManager["Text"]
+
+    def save(
+        self,
+        force_insert: bool = False,
+        force_update: bool = False,
+        using: str | None = None,
+        update_fields: Iterable[str] | None = None,
+    ) -> None:
+        self.name = self.name.upper()
+        self.text = self.text.strip()
+
+        super().save(
+            force_insert=force_insert,
+            force_update=force_update,
+            using=using,
+            update_fields=update_fields,
+        )
+
+    def __str__(self) -> str:
+        return f"{self.name}"
+
+
 class TGUser(models.Model):
     class Meta:
         db_table = "tg_user"

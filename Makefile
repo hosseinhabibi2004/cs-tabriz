@@ -29,6 +29,11 @@ migrate:
 	@python manage.py migrate
 
 
+.PHONY: loaddata
+loaddata:
+	@python manage.py loaddata text
+
+
 # Tests, linters & formatters
 .PHONY: lint
 lint:

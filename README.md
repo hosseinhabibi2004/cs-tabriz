@@ -30,15 +30,18 @@
    * `make makemigrations` or `python manage.py makemigrations`
    * `make migrate` or `python manage.py migrate`
 
-5. #### Run bot:
+5. #### Load initial data:
+   * `make loaddata` or `python manage.py loaddata FIXTURE`
+
+6. #### Run bot:
    * `make run-bot` or ```python -m app.delivery.bot```
 
-6. #### Run server (Django):
+7. #### Run server (Django):
    * Collect static: `python manage.py collectstatic`
    * Run server (local): `make run-local-server` or `python -m uvicorn app.delivery.web.asgi:application`
    * Run server (prod): `make run-prod-server`
 
-7. #### Run app _(Bot + Server)_:
+8. #### Run app _(Bot + Server)_:
    * `make -j3 run-bot run-local-server`
 
 

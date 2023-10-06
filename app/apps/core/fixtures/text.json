@@ -1,0 +1,245 @@
+[
+  {
+    "model": "core.text",
+    "pk": 1,
+    "fields": {
+      "name": "MAIN_FRESHMAN",
+      "is_button": true,
+      "text": "Freshman"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 2,
+    "fields": {
+      "name": "MAIN_COURSE",
+      "is_button": true,
+      "text": "Course"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 3,
+    "fields": {
+      "name": "MAIN_PLACE",
+      "is_button": true,
+      "text": "Place"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 4,
+    "fields": {
+      "name": "MAIN_PHONE",
+      "is_button": true,
+      "text": "Phone"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 5,
+    "fields": {
+      "name": "MAIN_LINK",
+      "is_button": true,
+      "text": "Link"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 6,
+    "fields": {
+      "name": "MAIN_BACK",
+      "is_button": true,
+      "text": "Back"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 7,
+    "fields": {
+      "name": "FRESHMAN_REGISTER",
+      "is_button": true,
+      "text": "Freshman Register"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 8,
+    "fields": {
+      "name": "COURSE_COURSES_BY_SEMESTER",
+      "is_button": true,
+      "text": "Courses by semester"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 9,
+    "fields": {
+      "name": "COURSE_COURSES_BY_TYPE",
+      "is_button": true,
+      "text": "Courses by type"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 10,
+    "fields": {
+      "name": "START_NEW_USER",
+      "is_button": true,
+      "text": "START_NEW_USER\r\n\r\nbot_name: {bot_name}\r\nfull_name: {full_name}"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 11,
+    "fields": {
+      "name": "START_NEW_USER",
+      "is_button": false,
+      "text": "START_NEW_USER\r\n\r\nbot_name: {bot_name}\r\nfull_name: {full_name}"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 12,
+    "fields": {
+      "name": "START_EXISTED_USER",
+      "is_button": false,
+      "text": "START_EXISTED_USER\r\n\r\nbot_name: {bot_name}\r\nfull_name: {full_name}"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 13,
+    "fields": {
+      "name": "BACK_MAIN_MENU",
+      "is_button": false,
+      "text": "BACK_MAIN_MENU"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 14,
+    "fields": {
+      "name": "FRESHMAN_MENU",
+      "is_button": false,
+      "text": "FRESHMAN_MENU"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 15,
+    "fields": {
+      "name": "FRESHMAN_REGISTER",
+      "is_button": false,
+      "text": "FRESHMAN_REGISTER"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 16,
+    "fields": {
+      "name": "COURSE_MENU",
+      "is_button": false,
+      "text": "COURSE_MENU"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 17,
+    "fields": {
+      "name": "COURSES_BY_SEMESTER_MENU",
+      "is_button": false,
+      "text": "COURSES_BY_SEMESTER_MENU"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 18,
+    "fields": {
+      "name": "SEMESTER_COURSES_MENU",
+      "is_button": false,
+      "text": "SEMESTER_COURSES_MENU\r\n\r\noffering_semester: {offering_semester}"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 19,
+    "fields": {
+      "name": "COURSES_BY_TYPE_MENU",
+      "is_button": false,
+      "text": "COURSES_BY_TYPE_MENU"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 20,
+    "fields": {
+      "name": "TYPE_COURSES_MENU",
+      "is_button": false,
+      "text": "TYPE_COURSES_MENU\r\n\r\ncourse_type: {course_type}"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 21,
+    "fields": {
+      "name": "COURSE_DETAILS",
+      "is_button": false,
+      "text": "COURSE_DETAILS\r\n\r\nfa_title: {fa_title}\r\nen_title: {en_title}\r\noffering_semester: {offering_semester}\r\ncredit: {credit}\r\nquiz_credit: {quiz_credit}\r\nprerequisite_course: {prerequisite_course}\r\nunit_type: {unit_type}\r\ncourse_type: {course_type}\r\nhas_exam: {has_exam}\r\nhas_project: {has_project}"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 22,
+    "fields": {
+      "name": "GROUPS",
+      "is_button": false,
+      "text": "GROUPS"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 23,
+    "fields": {
+      "name": "GROUP_PLACES",
+      "is_button": false,
+      "text": "GROUP_PLACES\r\n\r\ngroup: {group}"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 24,
+    "fields": {
+      "name": "PHONES",
+      "is_button": false,
+      "text": "PHONES\r\n\r\n{phones}"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 25,
+    "fields": {
+      "name": "PHONE_TEMPLATE",
+      "is_button": false,
+      "text": "PHONE_TEMPLATE\r\nname: {name}\r\nphone_number: {phone_number}"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 26,
+    "fields": {
+      "name": "LINKS",
+      "is_button": false,
+      "text": "LINKS\r\n\r\n{links}"
+    }
+  },
+  {
+    "model": "core.text",
+    "pk": 27,
+    "fields": {
+      "name": "LINK_TEMPLATE",
+      "is_button": false,
+      "text": "LINK_TEMPLATE\r\n<a href=\"{address}\">{name}</a>"
+    }
+  }
+]

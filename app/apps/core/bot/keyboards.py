@@ -215,7 +215,7 @@ class CourseKeyboard(InlineKeyboardBuilder):
         else:
             course_types = Course.CourseType.choices
             markup_length = len(course_types)
-            for course_type_id, course_type_name in course_types:
+            for course_type_id, course_type_name in right_to_left_markup(course_types):
                 self.button(
                     text=str(course_type_name),
                     callback_data=self.CoursesFilterCallback(

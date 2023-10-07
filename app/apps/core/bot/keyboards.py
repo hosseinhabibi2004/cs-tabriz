@@ -55,7 +55,7 @@ class MainKeyboard(ReplyKeyboardBuilder):
         self.button(text=self.place_button)
         self.button(text=self.phone_button)
         self.button(text=self.link_button)
-        self.adjust(1)
+        self.adjust(1, 2, 2)
 
 
 class FreshmanKeyboard(InlineKeyboardBuilder):

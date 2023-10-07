@@ -74,14 +74,14 @@ class Course(models.Model):
         db_table = "course"
 
     class UnitType(models.IntegerChoices):
-        THEORETICAL = 1, _("theoretical")
-        PRACTICAL = 2, _("practical")
+        THEORETICAL = 1, _("نظری")
+        PRACTICAL = 2, _("عملی")
 
     class CourseType(models.IntegerChoices):
-        GENERAL = 1, _("general")
-        FOUNDATIONAL = 2, _("foundational")
-        SPECIALIZED = 3, _("mandatory")
-        OPTIONAL = 4, _("optional")
+        GENERAL = 1, _("عمومی")
+        FOUNDATIONAL = 2, _("پایه")
+        SPECIALIZED = 3, _("تخصصی")
+        OPTIONAL = 4, _("اختیاری")
 
     fa_title = models.CharField(
         max_length=64,

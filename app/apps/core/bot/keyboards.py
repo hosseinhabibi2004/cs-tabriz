@@ -177,7 +177,7 @@ class CourseKeyboard(InlineKeyboardBuilder):
             markup_length = len(semesters)
             for offering_semester in right_to_left_markup(semesters):
                 self.button(
-                    text=f"Semester {offering_semester}",
+                    text=f"ترم {offering_semester}",
                     callback_data=self.CoursesFilterCallback(
                         filter_by="semester", value=offering_semester
                     ),

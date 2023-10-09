@@ -167,14 +167,18 @@ async def course_details_callback_query_handler(
         "COURSE_DETAILS",
         fa_title=course.fa_title,
         en_title=course.en_title,
-        offering_semester=course.offering_semester,
+        offering_semester=course.offering_semester
+        if course.offering_semester is not None
+        else "-",
         credit=course.credit,
         quiz_credit=course.quiz_credit,
-        prerequisite_course=course.prerequisite_course,
+        prerequisite_course=(
+            course.prerequisite_course if course.prerequisite_course is not None else "-"
+        ),
         unit_type=Course.UnitType(course.unit_type).label,
         course_type=Course.CourseType(course.course_type).label,
-        has_exam=course.has_exam,
-        has_project=course.has_project,
+        has_exam="✅" if course.has_exam else "❌",
+        has_project="✅" if course.has_project else "❌",
     )
     await query.message.edit_text(
         text=text,

@@ -139,7 +139,7 @@ async def courses_filter_callback_query_handler(
             )
         else:
             courses = None
-            text = await TEXT_USE_CASE.aget_text("COURSES_BY_SEMESTER_MENU")
+            text = await TEXT_USE_CASE.aget_text("COURSES_BY_TYPE_MENU")
     else:
         courses = None
         text = await TEXT_USE_CASE.aget_text("COURSE_MENU")

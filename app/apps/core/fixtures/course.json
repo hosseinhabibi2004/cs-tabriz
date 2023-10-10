@@ -1,0 +1,812 @@
+[
+{
+  "model": "core.course",
+  "pk": 1,
+  "fields": {
+    "fa_title": "مبانی کامپیوتر و برنامه‌سازی",
+    "en_title": "Foundations of Computer and Programming",
+    "offering_semester": 1,
+    "credit": 3,
+    "quiz_credit": 2,
+    "unit_type": 1,
+    "course_type": 2,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 2,
+  "fields": {
+    "fa_title": "ریاضیات عمومی ۱",
+    "en_title": "Calculus I",
+    "offering_semester": 1,
+    "credit": 4,
+    "quiz_credit": 1,
+    "unit_type": 1,
+    "course_type": 2,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 3,
+  "fields": {
+    "fa_title": "ریاضیات عمومی ۲",
+    "en_title": "Calculus II",
+    "offering_semester": 2,
+    "credit": 4,
+    "quiz_credit": 1,
+    "unit_type": 1,
+    "course_type": 2,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 4,
+  "fields": {
+    "fa_title": "معادلات دیفرانسیل",
+    "en_title": "Differential Equations",
+    "offering_semester": 3,
+    "credit": 3,
+    "quiz_credit": 1,
+    "unit_type": 1,
+    "course_type": 2,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 5,
+  "fields": {
+    "fa_title": "مبانی اقتصاد",
+    "en_title": "Foundations of Economics",
+    "offering_semester": 1,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 2,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 6,
+  "fields": {
+    "fa_title": "روش تحقیق و گزارش‌نویسی",
+    "en_title": "Research Methodology and Reporting",
+    "offering_semester": 3,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 2,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 7,
+  "fields": {
+    "fa_title": "مبانی احتمال",
+    "en_title": "Foundations of Probability",
+    "offering_semester": 3,
+    "credit": 3,
+    "quiz_credit": 1,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 8,
+  "fields": {
+    "fa_title": "مبانی علوم ریاضی",
+    "en_title": "Foundations of Mathematics Science",
+    "offering_semester": 2,
+    "credit": 3,
+    "quiz_credit": 1,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 9,
+  "fields": {
+    "fa_title": "مبانی آنالیز ریاضی",
+    "en_title": "Foundations of Mathematical Analysis",
+    "offering_semester": 4,
+    "credit": 3,
+    "quiz_credit": 1,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 10,
+  "fields": {
+    "fa_title": "مبانی آنالیز عددی",
+    "en_title": "Foundations of Numerical Analysis",
+    "offering_semester": 6,
+    "credit": 3,
+    "quiz_credit": 1,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 11,
+  "fields": {
+    "fa_title": "مبانی ترکیبیات",
+    "en_title": "Foundations of Combinatorics",
+    "offering_semester": 3,
+    "credit": 3,
+    "quiz_credit": 1,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 12,
+  "fields": {
+    "fa_title": "مبانی منطق و نظریه مجموعه‌ها",
+    "en_title": "Foundations of Logic and Set Theory",
+    "offering_semester": 4,
+    "credit": 3,
+    "quiz_credit": 1,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 13,
+  "fields": {
+    "fa_title": "مبانی ماتریس‌ها و جبر خطی",
+    "en_title": "Foundations of and Linear Algebra",
+    "offering_semester": 5,
+    "credit": 3,
+    "quiz_credit": 1,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 14,
+  "fields": {
+    "fa_title": "مبانی نظریه محاسبه",
+    "en_title": "Foundations of Computation Theory",
+    "offering_semester": 4,
+    "credit": 3,
+    "quiz_credit": 1,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 15,
+  "fields": {
+    "fa_title": "برنامه‌سازی پیشرفته",
+    "en_title": "Advanced Programming",
+    "offering_semester": 2,
+    "credit": 3,
+    "quiz_credit": 2,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 16,
+  "fields": {
+    "fa_title": "زبان ماشین و اسمبلی",
+    "en_title": "Machine and Assembly Language",
+    "offering_semester": 4,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 17,
+  "fields": {
+    "fa_title": "ساختمان داده‌ها و الگوریتم‌ها",
+    "en_title": "Data Structure and Algorithms",
+    "offering_semester": 3,
+    "credit": 3,
+    "quiz_credit": 1,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 18,
+  "fields": {
+    "fa_title": "طراحی و تحلیل الگوریتم‌ها",
+    "en_title": "Design and Analysis of Algorithms",
+    "offering_semester": 5,
+    "credit": 3,
+    "quiz_credit": 1,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 19,
+  "fields": {
+    "fa_title": "پایگاه داده‌ها",
+    "en_title": "Database Systems",
+    "offering_semester": 6,
+    "credit": 3,
+    "quiz_credit": 1,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 20,
+  "fields": {
+    "fa_title": "اصول سیستم‌های عامل",
+    "en_title": "Fundamentals of Operating Systems",
+    "offering_semester": 5,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 21,
+  "fields": {
+    "fa_title": "نظریه محاسبه",
+    "en_title": "Theory of Computation",
+    "offering_semester": 5,
+    "credit": 3,
+    "quiz_credit": 1,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 22,
+  "fields": {
+    "fa_title": "کامپایلر",
+    "en_title": "Compilers",
+    "offering_semester": 5,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 23,
+  "fields": {
+    "fa_title": "زبان‌های برنامه سازی",
+    "en_title": "Programming Languages",
+    "offering_semester": 8,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 24,
+  "fields": {
+    "fa_title": "اصول طراحی نرم‌افزار",
+    "en_title": "Fundamentals of Software Design",
+    "offering_semester": 6,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 25,
+  "fields": {
+    "fa_title": "هوش مصنوعی",
+    "en_title": "Artificial Intelligence",
+    "offering_semester": 7,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 26,
+  "fields": {
+    "fa_title": "شبیه‌سازی کامپیوتر",
+    "en_title": "Computer Simulations",
+    "offering_semester": 7,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 27,
+  "fields": {
+    "fa_title": "شبکه‌های کامپیوتری",
+    "en_title": "Computer Networks",
+    "offering_semester": 7,
+    "credit": 3,
+    "quiz_credit": 1,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 28,
+  "fields": {
+    "fa_title": "گرافیک کامپیوتری",
+    "en_title": "Computer Graphics",
+    "offering_semester": 8,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 29,
+  "fields": {
+    "fa_title": "مدارهای منطقی",
+    "en_title": "Digital Circuits",
+    "offering_semester": 6,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 30,
+  "fields": {
+    "fa_title": "معماری کامپیوتر",
+    "en_title": "Computer Architecture",
+    "offering_semester": 7,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 31,
+  "fields": {
+    "fa_title": "ریزپردازنده",
+    "en_title": "Microprocessors",
+    "offering_semester": 8,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 32,
+  "fields": {
+    "fa_title": "زبان تخصصی",
+    "en_title": "Technical English Language",
+    "offering_semester": 4,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 3,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 33,
+  "fields": {
+    "fa_title": "مباحثی در علوم کامپیوتر",
+    "en_title": "Topics in Computer Science",
+    "offering_semester": null,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 4,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 34,
+  "fields": {
+    "fa_title": "نظریه گراف و کاربردها",
+    "en_title": "Graph Theory and Applications",
+    "offering_semester": null,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 4,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 35,
+  "fields": {
+    "fa_title": "طراحی هندسی کامپیوتر",
+    "en_title": "Computer-Based Geometric Design",
+    "offering_semester": null,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 4,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 36,
+  "fields": {
+    "fa_title": "نظریه کدگذاری",
+    "en_title": "Theory of Coding",
+    "offering_semester": null,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 4,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 37,
+  "fields": {
+    "fa_title": "مبانی امنیت و داده‌ها",
+    "en_title": "Foundations of Security and Data",
+    "offering_semester": null,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 4,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 38,
+  "fields": {
+    "fa_title": "برنامه‌ریزی پویا",
+    "en_title": "Dynamic Programming",
+    "offering_semester": null,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 4,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 39,
+  "fields": {
+    "fa_title": "بهینه‌سازی خطی",
+    "en_title": "Linear Optimization",
+    "offering_semester": null,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 4,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 40,
+  "fields": {
+    "fa_title": "طراحی شی‌گرای سیستم‌ها",
+    "en_title": "Object Oriented System Design",
+    "offering_semester": null,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 4,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 41,
+  "fields": {
+    "fa_title": "سیستم‌های اطلاعات مدیریت",
+    "en_title": "Management Information Systems",
+    "offering_semester": null,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 4,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 42,
+  "fields": {
+    "fa_title": "برنامه‌نویسی مستقل از زیرساخت",
+    "en_title": "Platform Independent Programming",
+    "offering_semester": null,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 4,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 43,
+  "fields": {
+    "fa_title": "چالش‌های برنامه‌نویسی",
+    "en_title": "Programming Challenges",
+    "offering_semester": null,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 4,
+    "has_exam": true,
+    "has_project": true
+  }
+},
+{
+  "model": "core.course",
+  "pk": 44,
+  "fields": {
+    "fa_title": "اخلاق اسلامی",
+    "en_title": "Islamic Morality",
+    "offering_semester": null,
+    "credit": 2,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 1,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 45,
+  "fields": {
+    "fa_title": "تفسیر موضوعی",
+    "en_title": "Thematic Interpretation",
+    "offering_semester": null,
+    "credit": 2,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 1,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 46,
+  "fields": {
+    "fa_title": "تاریخ اسلام",
+    "en_title": "Islam History",
+    "offering_semester": null,
+    "credit": 2,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 1,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 47,
+  "fields": {
+    "fa_title": "مبانی نظری اسلام ۱",
+    "en_title": "Theoretical Foundations of Islam I",
+    "offering_semester": null,
+    "credit": 2,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 1,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 48,
+  "fields": {
+    "fa_title": "مبانی نظری اسلام ۲",
+    "en_title": "Theoretical Foundations of Islam II",
+    "offering_semester": null,
+    "credit": 2,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 1,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 49,
+  "fields": {
+    "fa_title": "انقلاب اسلامی",
+    "en_title": "Islamic Revolution",
+    "offering_semester": null,
+    "credit": 2,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 1,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 50,
+  "fields": {
+    "fa_title": "دانش خانواده و جمعیت",
+    "en_title": "Science of Family and Population",
+    "offering_semester": null,
+    "credit": 2,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 1,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 51,
+  "fields": {
+    "fa_title": "ادبیات فارسی",
+    "en_title": "Persian Literature",
+    "offering_semester": null,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 1,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 52,
+  "fields": {
+    "fa_title": "زبان خارجی",
+    "en_title": "English Language",
+    "offering_semester": null,
+    "credit": 3,
+    "quiz_credit": 0,
+    "unit_type": 1,
+    "course_type": 1,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 53,
+  "fields": {
+    "fa_title": "تربیت بدنی",
+    "en_title": "Physical Education",
+    "offering_semester": null,
+    "credit": 1,
+    "quiz_credit": 0,
+    "unit_type": 2,
+    "course_type": 1,
+    "has_exam": true,
+    "has_project": false
+  }
+},
+{
+  "model": "core.course",
+  "pk": 54,
+  "fields": {
+    "fa_title": "تربیت بدنی ۲ (ورزش ۱)",
+    "en_title": "Physical Education II",
+    "offering_semester": null,
+    "credit": 1,
+    "quiz_credit": 0,
+    "unit_type": 2,
+    "course_type": 1,
+    "has_exam": true,
+    "has_project": false
+  }
+}
+]

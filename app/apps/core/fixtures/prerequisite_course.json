@@ -1,0 +1,402 @@
+[
+{
+  "model": "core.prerequisitecourse",
+  "pk": 2,
+  "fields": {
+    "course": 3,
+    "prerequisite_course": 2
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 4,
+  "fields": {
+    "course": 4,
+    "prerequisite_course": 2
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 6,
+  "fields": {
+    "course": 6,
+    "prerequisite_course": 1
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 8,
+  "fields": {
+    "course": 7,
+    "prerequisite_course": 2
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 10,
+  "fields": {
+    "course": 8,
+    "prerequisite_course": 2
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 12,
+  "fields": {
+    "course": 9,
+    "prerequisite_course": 3
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 14,
+  "fields": {
+    "course": 10,
+    "prerequisite_course": 3
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 16,
+  "fields": {
+    "course": 11,
+    "prerequisite_course": 8
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 18,
+  "fields": {
+    "course": 12,
+    "prerequisite_course": 8
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 20,
+  "fields": {
+    "course": 13,
+    "prerequisite_course": 13
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 22,
+  "fields": {
+    "course": 14,
+    "prerequisite_course": 8
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 24,
+  "fields": {
+    "course": 15,
+    "prerequisite_course": 1
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 26,
+  "fields": {
+    "course": 16,
+    "prerequisite_course": 15
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 28,
+  "fields": {
+    "course": 17,
+    "prerequisite_course": 15
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 30,
+  "fields": {
+    "course": 18,
+    "prerequisite_course": 17
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 32,
+  "fields": {
+    "course": 19,
+    "prerequisite_course": 17
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 35,
+  "fields": {
+    "course": 20,
+    "prerequisite_course": 16
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 36,
+  "fields": {
+    "course": 20,
+    "prerequisite_course": 17
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 38,
+  "fields": {
+    "course": 21,
+    "prerequisite_course": 14
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 40,
+  "fields": {
+    "course": 22,
+    "prerequisite_course": 14
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 42,
+  "fields": {
+    "course": 23,
+    "prerequisite_course": 22
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 44,
+  "fields": {
+    "course": 24,
+    "prerequisite_course": 17
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 47,
+  "fields": {
+    "course": 25,
+    "prerequisite_course": 18
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 48,
+  "fields": {
+    "course": 25,
+    "prerequisite_course": 7
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 51,
+  "fields": {
+    "course": 26,
+    "prerequisite_course": 17
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 52,
+  "fields": {
+    "course": 26,
+    "prerequisite_course": 7
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 54,
+  "fields": {
+    "course": 27,
+    "prerequisite_course": 20
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 57,
+  "fields": {
+    "course": 28,
+    "prerequisite_course": 17
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 58,
+  "fields": {
+    "course": 28,
+    "prerequisite_course": 13
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 61,
+  "fields": {
+    "course": 29,
+    "prerequisite_course": 11
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 62,
+  "fields": {
+    "course": 29,
+    "prerequisite_course": 12
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 64,
+  "fields": {
+    "course": 30,
+    "prerequisite_course": 29
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 66,
+  "fields": {
+    "course": 31,
+    "prerequisite_course": 30
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 68,
+  "fields": {
+    "course": 32,
+    "prerequisite_course": 52
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 71,
+  "fields": {
+    "course": 34,
+    "prerequisite_course": 18
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 72,
+  "fields": {
+    "course": 34,
+    "prerequisite_course": 11
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 75,
+  "fields": {
+    "course": 35,
+    "prerequisite_course": 17
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 76,
+  "fields": {
+    "course": 35,
+    "prerequisite_course": 13
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 79,
+  "fields": {
+    "course": 36,
+    "prerequisite_course": 18
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 80,
+  "fields": {
+    "course": 36,
+    "prerequisite_course": 11
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 82,
+  "fields": {
+    "course": 37,
+    "prerequisite_course": 27
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 84,
+  "fields": {
+    "course": 38,
+    "prerequisite_course": 18
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 86,
+  "fields": {
+    "course": 39,
+    "prerequisite_course": 13
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 88,
+  "fields": {
+    "course": 40,
+    "prerequisite_course": 24
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 90,
+  "fields": {
+    "course": 41,
+    "prerequisite_course": 24
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 93,
+  "fields": {
+    "course": 42,
+    "prerequisite_course": 18
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 94,
+  "fields": {
+    "course": 42,
+    "prerequisite_course": 27
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 96,
+  "fields": {
+    "course": 43,
+    "prerequisite_course": 1
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 98,
+  "fields": {
+    "course": 48,
+    "prerequisite_course": 47
+  }
+},
+{
+  "model": "core.prerequisitecourse",
+  "pk": 100,
+  "fields": {
+    "course": 54,
+    "prerequisite_course": 53
+  }
+}
+]

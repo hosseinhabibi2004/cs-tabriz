@@ -32,6 +32,8 @@ migrate:
 .PHONY: loaddata
 loaddata:
 	@python manage.py loaddata text
+	@python manage.py loaddata course
+	@python manage.py loaddata prerequisite_course
 
 
 # Tests, linters & formatters

@@ -1,7 +1,8 @@
-from typing import Optional
+from typing import Any, Optional
 
+from django import forms
 from django.contrib import admin
-from django.contrib.admin import ModelAdmin
+from django.contrib.admin import ModelAdmin, widgets
 from django.http import HttpRequest
 from django.utils.html import format_html
 
@@ -65,11 +66,39 @@ class TGUserAdmin(ModelAdmin[TGUser]):
 
 @admin.register(Course)
 class CourseAdmin(ModelAdmin[Course]):
+    class CourseForm(forms.ModelForm[Course]):
+        class Meta:
+            model = Course
+            fields = "__all__"
+
+        prerequisite_courses = forms.ModelMultipleChoiceField(
+            queryset=Course.objects.all(),
+            required=False,
+            widget=widgets.FilteredSelectMultiple(
+                verbose_name="Prerequisite Courses",
+                is_stacked=False,
+            ),
+        )
+
+    form = CourseForm
+
     list_display = (
         "fa_title",
         "course_type",
         "unit_type",
     )
+
+    def save_related(
+        self,
+        request: HttpRequest,
+        form: Any,
+        formsets: Any,
+        change: Any,
+    ) -> None:
+        super().save_related(request, form, formsets, change)
+
+        form.instance.prerequisite_courses.clear()
+        form.instance.prerequisite_courses.set(form.cleaned_data["prerequisite_courses"])
 
 
 @admin.register(Place)

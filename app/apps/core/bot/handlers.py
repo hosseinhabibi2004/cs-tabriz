@@ -4,8 +4,9 @@ from aiogram import F, Router
 from aiogram.exceptions import TelegramBadRequest
 from aiogram.filters import Command
 from aiogram.types import CallbackQuery, Message
+from asgiref.sync import sync_to_async
 
-from ..models import Course, Link, Phone, Place
+from ..models import Course, Link, Phone, Place, PrerequisiteCourse
 from ..use_case import CORE_USE_CASE, TEXT_USE_CASE
 from . import keyboards
 
@@ -157,24 +158,32 @@ async def course_details_callback_query_handler(
     query: CallbackQuery,
     callback_data: keyboards.CourseKeyboard.CourseCallback,
 ) -> None:
+    @sync_to_async
+    def get_prerequisite_courses_text(_course: Course) -> str:
+        prerequisite_courses = PrerequisiteCourse.objects.filter(course=_course).all()
+        if prerequisite_courses is not None:
+            return "، ".join(
+                [_.prerequisite_course.fa_title for _ in prerequisite_courses]
+            )
+        return "-"
+
     if query.message is None:
         return
 
     await query.answer()
 
     course = await Course.objects.aget(id=callback_data.id)
+
     text = await TEXT_USE_CASE.aget_text(
         "COURSE_DETAILS",
         fa_title=course.fa_title,
         en_title=course.en_title,
-        offering_semester=course.offering_semester
-        if course.offering_semester is not None
-        else "-",
+        offering_semester=(
+            course.offering_semester if course.offering_semester is not None else "-"
+        ),
         credit=course.credit,
         quiz_credit=course.quiz_credit,
-        prerequisite_course=(
-            course.prerequisite_course if course.prerequisite_course is not None else "-"
-        ),
+        prerequisite_course=get_prerequisite_courses_text(_course=course),
         unit_type=Course.UnitType(course.unit_type).label,
         course_type=Course.CourseType(course.course_type).label,
         has_exam="✅" if course.has_exam else "❌",

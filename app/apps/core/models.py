@@ -109,12 +109,10 @@ class Course(models.Model):
         default=0,
         verbose_name="Course Quiz Credit",
     )
-    prerequisite_course = models.ForeignKey(
+    prerequisite_courses = models.ManyToManyField(
         to="self",
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        verbose_name="Prerequisite Course",
+        through="PrerequisiteCourse",
+        symmetrical=False,
     )
     unit_type = models.IntegerField(
         choices=UnitType.choices,
@@ -137,6 +135,30 @@ class Course(models.Model):
 
     def __str__(self) -> str:
         return f"{self.fa_title}"
+
+
+class PrerequisiteCourse(models.Model):
+    class Meta:
+        db_table = "prerequisite_course"
+        unique_together = ("course", "prerequisite_course")
+
+    course = models.ForeignKey(
+        to=Course,
+        on_delete=models.CASCADE,
+        related_name="+",
+        verbose_name="Course",
+    )
+    prerequisite_course = models.ForeignKey(
+        to=Course,
+        on_delete=models.CASCADE,
+        related_name="+",
+        verbose_name="Prerequisite Course",
+    )
+
+    objects: models.manager.BaseManager["PrerequisiteCourse"]
+
+    def __str__(self) -> str:
+        return f"{self.course} {self.prerequisite_course}"
 
 
 class Place(models.Model):

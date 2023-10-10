@@ -183,7 +183,7 @@ async def course_details_callback_query_handler(
         ),
         credit=course.credit,
         quiz_credit=course.quiz_credit,
-        prerequisite_course=get_prerequisite_courses_text(_course=course),
+        prerequisite_course=await get_prerequisite_courses_text(_course=course),
         unit_type=Course.UnitType(course.unit_type).label,
         course_type=Course.CourseType(course.course_type).label,
         has_exam="✅" if course.has_exam else "❌",

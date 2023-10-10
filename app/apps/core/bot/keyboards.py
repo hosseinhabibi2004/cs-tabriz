@@ -161,7 +161,7 @@ class CourseKeyboard(InlineKeyboardBuilder):
             )
         elif courses is not None:
             markup_length = len(courses)
-            for _course in courses:
+            for _course in right_to_left_markup(courses):
                 self.button(
                     text=_course.fa_title,
                     callback_data=self.CourseCallback(
@@ -203,7 +203,7 @@ class CourseKeyboard(InlineKeyboardBuilder):
             )
         elif courses is not None:
             markup_length = len(courses)
-            for _course in courses:
+            for _course in right_to_left_markup(courses):
                 self.button(
                     text=_course.fa_title,
                     callback_data=self.CourseCallback(filter_by="type", id=_course.id),

@@ -1,64 +1,17 @@
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+<p align="center">
+  <img width="50%" src="/CSTabrizBot.png">
+</p>
+
+# داستان چیه؟
+اوایل سال‌تحصیلی ۰۳-۱۴۰۲ بود که ایده‌ی زدن این ربات رو بهم دادن و منِ مقداری بیکار، به عهده گرفتمش. خیلی سریع این مخزن رو ساختم و کد زدن رو شروع کردم و خیلی زود هم تمومش کردم. همین!
+
+در اصل هدف اصلی ساختن ربات این بود که برای ورودی‌های جدید کارها رو ساده‌تر کنیم. ولی خب اونا فقط قراره یه روز رو برای ثبت‌نام بیان، واسه همین چیزایی که داخل ربات آوردم چیزایی بودن که بقیه دانشجوهای کارشناسی هم ازش استفاده کنن.
 
 
-# Aiogram-Django Template
-
-## Features
-
-1. [Custom and configurable](app/config/__app_template__) `app` template
-2. [Fully typed](https://github.com/typeddjango/django-stubs) `Django`
-3. Async ORM (`Django 4.1+`)
-4. [aiogram3](https://docs.aiogram.dev/en/dev-3.x/) as Telegram Bot API
-5. [pre-commit hooks](.pre-commit-config.yaml) for code formatting and linting
-
-## Installation
-
-1. #### Clone the Template:
-   * `git clone https://github.com/MaximZayats/aiogram-django-template`
-
-2. #### Install Requirements
-   * `pip install -r requirements.txt`
-   * `pip install -r requirements-dev.txt`
-
-3. #### Change the configuration:
-   * Copy `.env.dist`
-   * Rename it to `.env`
-   * Insert your values
-
-4. #### Make migrations:
-   * `make makemigrations` or `python manage.py makemigrations`
-   * `make migrate` or `python manage.py migrate`
-
-5. #### Load initial data:
-   * `make loaddata` or `python manage.py loaddata FIXTURE`
-
-6. #### Run bot:
-   * `make run-bot` or ```python -m app.delivery.bot```
-
-7. #### Run server (Django):
-   * Collect static: `python manage.py collectstatic`
-   * Run server (local): `make run-local-server` or `python -m uvicorn app.delivery.web.asgi:application`
-   * Run server (prod): `make run-prod-server`
-
-8. #### Run app _(Bot + Server)_:
-   * `make -j3 run-bot run-local-server`
+# اصلاً چی داره؟
+هیچی نداره؛ ولی اگه خواستی بدونی می‌تونی بری [ربات](https://t.me/CSTabrizBot) رو استارت بزنی.
 
 
-## Usage
-
-1. #### Create new app
-   * `python manage.py startapp APP_NAME`
-      * Apps are created using a template: [`app/config/__app_template__`](app/config/__app_template__)
-      * You can use your template: `python manage.py startapp APP_NAME --template TEMPLATE_PATH`
-      * Or without template: `python manage.py startapp APP_NAME --no-template`
-
-2. #### Register app
-   * Register app in [`app/config/application.py`](app/config/application.py)
-
-3. #### Check your apps
-   * Run bot
-   * Type `/apps`:
-      * You should get a list of all your apps
-   * Type `/APP_NAME`:
-      * You should get a message from your app
+# کتابخونه‌هایی که استفاده کردم
+- [جنگو](https://github.com/django/django)
+- [آیوگرام](https://github.com/aiogram/aiogram)

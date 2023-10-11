@@ -161,7 +161,7 @@ async def course_details_callback_query_handler(
     @sync_to_async
     def get_prerequisite_courses_text(_course: Course) -> str:
         prerequisite_courses = PrerequisiteCourse.objects.filter(course=_course).all()
-        if prerequisite_courses is not None:
+        if prerequisite_courses:
             return "، ".join(
                 [_.prerequisite_course.fa_title for _ in prerequisite_courses]
             )

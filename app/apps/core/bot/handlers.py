@@ -245,12 +245,23 @@ async def places_callback_query_handler(
             ).as_markup(),
         )
     elif isinstance(callback_data, keyboards.PlaceKeyboard.LocationCallback):
-        await query.message.answer_location(
+        place = await Place.objects.aget(
             latitude=callback_data.latitude,
             longitude=callback_data.longitude,
         )
-        await query.message.delete()
-        await query.message.send_copy(chat_id=query.from_user.id)
+        if place:
+            await query.message.delete()
+            await query.message.answer_location(
+                latitude=place.latitude,
+                longitude=place.longitude,
+            )
+            text = await TEXT_USE_CASE.aget_text(
+                "PLACE",
+                name=place.name,
+                group=Place.Group(place.group).label,
+            )
+            await query.message.answer(text=text)
+            await query.message.send_copy(chat_id=query.from_user.id)
 
 
 @router.message(F.text == keyboards.MainKeyboard.phone_button)

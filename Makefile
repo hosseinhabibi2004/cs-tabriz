@@ -34,6 +34,7 @@ loaddata:
 	@python manage.py loaddata text
 	@python manage.py loaddata course
 	@python manage.py loaddata prerequisite_course
+	@python manage.py loaddata place
 
 
 # Tests, linters & formatters

@@ -1,0 +1,372 @@
+[
+{
+  "model": "core.place",
+  "pk": 1,
+  "fields": {
+    "name": "درب اصلی",
+    "group": 1,
+    "latitude": 38.063206,
+    "longitude": 46.330789
+  }
+},
+{
+  "model": "core.place",
+  "pk": 2,
+  "fields": {
+    "name": "درب قاضی",
+    "group": 1,
+    "latitude": 38.057169,
+    "longitude": 46.326462
+  }
+},
+{
+  "model": "core.place",
+  "pk": 3,
+  "fields": {
+    "name": "درب فنی",
+    "group": 1,
+    "latitude": 38.061375,
+    "longitude": 46.326339
+  }
+},
+{
+  "model": "core.place",
+  "pk": 4,
+  "fields": {
+    "name": "درب صداوسیما (جام جم)",
+    "group": 1,
+    "latitude": 38.058659,
+    "longitude": 46.332889
+  }
+},
+{
+  "model": "core.place",
+  "pk": 5,
+  "fields": {
+    "name": "درب برق",
+    "group": 1,
+    "latitude": 38.058465,
+    "longitude": 46.340768
+  }
+},
+{
+  "model": "core.place",
+  "pk": 6,
+  "fields": {
+    "name": "سلف مرکزی برادران",
+    "group": 2,
+    "latitude": 38.060221,
+    "longitude": 46.330182
+  }
+},
+{
+  "model": "core.place",
+  "pk": 7,
+  "fields": {
+    "name": "سلف دختران",
+    "group": 2,
+    "latitude": 38.05765,
+    "longitude": 46.329109
+  }
+},
+{
+  "model": "core.place",
+  "pk": 8,
+  "fields": {
+    "name": "سلف برق",
+    "group": 2,
+    "latitude": 38.057329,
+    "longitude": 46.337811
+  }
+},
+{
+  "model": "core.place",
+  "pk": 9,
+  "fields": {
+    "name": "رستوران گلها",
+    "group": 2,
+    "latitude": 38.060558,
+    "longitude": 46.330377
+  }
+},
+{
+  "model": "core.place",
+  "pk": 10,
+  "fields": {
+    "name": "رستوران سبحان",
+    "group": 2,
+    "latitude": 38.058257,
+    "longitude": 46.329757
+  }
+},
+{
+  "model": "core.place",
+  "pk": 11,
+  "fields": {
+    "name": "رستوران ریحان",
+    "group": 2,
+    "latitude": 38.057339,
+    "longitude": 46.329674
+  }
+},
+{
+  "model": "core.place",
+  "pk": 12,
+  "fields": {
+    "name": "خوابگاه فجر (پسران)",
+    "group": 3,
+    "latitude": 38.059416,
+    "longitude": 46.330127
+  }
+},
+{
+  "model": "core.place",
+  "pk": 13,
+  "fields": {
+    "name": "خوابگاه ولیعصر (پسران)",
+    "group": 3,
+    "latitude": 38.053395,
+    "longitude": 46.365605
+  }
+},
+{
+  "model": "core.place",
+  "pk": 14,
+  "fields": {
+    "name": "خوابگاه شهدا (دختران)",
+    "group": 3,
+    "latitude": 38.053294,
+    "longitude": 46.334984
+  }
+},
+{
+  "model": "core.place",
+  "pk": 15,
+  "fields": {
+    "name": "ساختمان علوم کامپيوتر",
+    "group": 4,
+    "latitude": 38.06264,
+    "longitude": 46.327579
+  }
+},
+{
+  "model": "core.place",
+  "pk": 16,
+  "fields": {
+    "name": "دانشکده ریاضی",
+    "group": 4,
+    "latitude": 38.053119,
+    "longitude": 46.328813
+  }
+},
+{
+  "model": "core.place",
+  "pk": 17,
+  "fields": {
+    "name": "ساختمان شهدا",
+    "group": 4,
+    "latitude": 38.061866,
+    "longitude": 46.32807
+  }
+},
+{
+  "model": "core.place",
+  "pk": 18,
+  "fields": {
+    "name": "بانک تجارت",
+    "group": 5,
+    "latitude": 38.061456,
+    "longitude": 46.326605
+  }
+},
+{
+  "model": "core.place",
+  "pk": 19,
+  "fields": {
+    "name": "بانک ملّی",
+    "group": 5,
+    "latitude": 38.062711,
+    "longitude": 46.331736
+  }
+},
+{
+  "model": "core.place",
+  "pk": 20,
+  "fields": {
+    "name": "امور دانشجویی",
+    "group": 6,
+    "latitude": 38.057779,
+    "longitude": 46.329431
+  }
+},
+{
+  "model": "core.place",
+  "pk": 21,
+  "fields": {
+    "name": "معاونت دانشجویی",
+    "group": 6,
+    "latitude": 38.058103,
+    "longitude": 46.328471
+  }
+},
+{
+  "model": "core.place",
+  "pk": 22,
+  "fields": {
+    "name": "اداره مرکزی دانشگاه",
+    "group": 6,
+    "latitude": 38.057303,
+    "longitude": 46.339062
+  }
+},
+{
+  "model": "core.place",
+  "pk": 23,
+  "fields": {
+    "name": "ریاست دانشگاه",
+    "group": 6,
+    "latitude": 38.056978,
+    "longitude": 46.33856
+  }
+},
+{
+  "model": "core.place",
+  "pk": 24,
+  "fields": {
+    "name": "حراست",
+    "group": 6,
+    "latitude": 38.060378,
+    "longitude": 46.331297
+  }
+},
+{
+  "model": "core.place",
+  "pk": 25,
+  "fields": {
+    "name": "تالار وحدت",
+    "group": 6,
+    "latitude": 38.060577,
+    "longitude": 46.328059
+  }
+},
+{
+  "model": "core.place",
+  "pk": 26,
+  "fields": {
+    "name": "مرکز رشد و نوآوری",
+    "group": 6,
+    "latitude": 38.055519,
+    "longitude": 46.327533
+  }
+},
+{
+  "model": "core.place",
+  "pk": 27,
+  "fields": {
+    "name": "کتابخانه مرکزی",
+    "group": 7,
+    "latitude": 38.04803,
+    "longitude": 46.332522
+  }
+},
+{
+  "model": "core.place",
+  "pk": 28,
+  "fields": {
+    "name": "خشک‌شویی",
+    "group": 7,
+    "latitude": 38.057226,
+    "longitude": 46.330425
+  }
+},
+{
+  "model": "core.place",
+  "pk": 29,
+  "fields": {
+    "name": "بازارچه دانشجویی",
+    "group": 7,
+    "latitude": 38.058367,
+    "longitude": 46.329664
+  }
+},
+{
+  "model": "core.place",
+  "pk": 30,
+  "fields": {
+    "name": "باغ گیاه‌شناسی",
+    "group": 7,
+    "latitude": 38.05806,
+    "longitude": 46.333201
+  }
+},
+{
+  "model": "core.place",
+  "pk": 31,
+  "fields": {
+    "name": "افلاک‌نما",
+    "group": 7,
+    "latitude": 38.05175,
+    "longitude": 46.326912
+  }
+},
+{
+  "model": "core.place",
+  "pk": 32,
+  "fields": {
+    "name": "چاله عمران",
+    "group": 7,
+    "latitude": 38.062244,
+    "longitude": 46.327685
+  }
+},
+{
+  "model": "core.place",
+  "pk": 33,
+  "fields": {
+    "name": "استادیوم",
+    "group": 7,
+    "latitude": 38.053914,
+    "longitude": 46.331105
+  }
+},
+{
+  "model": "core.place",
+  "pk": 34,
+  "fields": {
+    "name": "چمن مصنوعی",
+    "group": 7,
+    "latitude": 38.054861,
+    "longitude": 46.330354
+  }
+},
+{
+  "model": "core.place",
+  "pk": 35,
+  "fields": {
+    "name": "ژیمنازیوم",
+    "group": 7,
+    "latitude": 38.057787,
+    "longitude": 46.330904
+  }
+},
+{
+  "model": "core.place",
+  "pk": 36,
+  "fields": {
+    "name": "استخر",
+    "group": 7,
+    "latitude": 38.057291,
+    "longitude": 46.330572
+  }
+},
+{
+  "model": "core.place",
+  "pk": 37,
+  "fields": {
+    "name": "سالن ورزشی شهدا (دختران)",
+    "group": 7,
+    "latitude": 38.052518,
+    "longitude": 46.333183
+  }
+}
+]

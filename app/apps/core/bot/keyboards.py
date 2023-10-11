@@ -40,6 +40,10 @@ class MainKeyboard(ReplyKeyboardBuilder):
         "MAIN_LINK",
         is_button=True,
     )
+    about_button = TEXT_USE_CASE.get_text(
+        "MAIN_ABOUT",
+        is_button=True,
+    )
     back_button = TEXT_USE_CASE.get_text(
         "MAIN_BACK",
         is_button=True,
@@ -55,7 +59,8 @@ class MainKeyboard(ReplyKeyboardBuilder):
         self.button(text=self.place_button)
         self.button(text=self.phone_button)
         self.button(text=self.link_button)
-        self.adjust(1, 2, 2)
+        self.button(text=self.about_button)
+        self.adjust(1, 2, 2, 1)
 
 
 class FreshmanKeyboard(InlineKeyboardBuilder):

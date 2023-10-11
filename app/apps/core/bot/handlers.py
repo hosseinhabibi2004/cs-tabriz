@@ -298,3 +298,10 @@ async def links_message_handler(message: Message) -> None:
         ),
     )
     await message.answer(text=text)
+
+
+@router.message(F.text == keyboards.MainKeyboard.about_button)
+async def about_message_handler(message: Message) -> None:
+    await message.answer(
+        text=await TEXT_USE_CASE.aget_text("ABOUT"),
+    )

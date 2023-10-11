@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="50%" src="/CSTabrizBot.png">
+  <img src="./CSTabrizBot.png" width="50%" height="50%">
 </p>
 
 # داستان چیه؟
